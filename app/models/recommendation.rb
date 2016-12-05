@@ -5,6 +5,10 @@ class Recommendation < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :category,
+             :through => :state,
+             :source => :category
+
   # Validations
 
 end

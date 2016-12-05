@@ -8,6 +8,10 @@ class Category < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :recommendations,
+             :through => :states,
+             :source => :recommendation
+
   # Validations
 
 end
