@@ -17,7 +17,7 @@
       <% @recommendations.each do |recommendation| %>
       <tr>
         <td><%= recommendation.recommendation %></td>
-        <td><%= recommendation.state_id %></td>
+        <td><%= recommendation.state.category_id %></td>
         <td>
           <a href="/recommendations/<%= recommendation.id %>" class="btn btn-primary">Show</a>
           <a href="/recommendations/<%= recommendation.id %>/edit" class="btn btn-warning">Edit</a>
