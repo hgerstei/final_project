@@ -23,7 +23,7 @@
         <td><%= purchase.category.category %></td>
         <td><%= purchase.purchase_date %></td>
         <td><%= purchase.notes %></td>
-        <td><%= purchase.user_id %></td>
+        <td><%= purchase.user.email %></td>
         <td>
           <a href="/purchases/<%= purchase.id %>" class="btn btn-primary">Show</a>
           <a href="/purchases/<%= purchase.id %>/edit" class="btn btn-warning">Edit</a>
