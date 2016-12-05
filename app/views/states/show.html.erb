@@ -63,6 +63,38 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_recipe" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for recipe_name -->
+      <div class="form-group">
+        <label for="recipe_name" class="control-label">
+          Recipe name
+        </label>
+
+        <textarea id="recipe_name" name="recipe_name" placeholder="Recipe name" class="form-control" rows="3"></textarea>
+      </div>
+
+      <!-- Label and input for recipe_url -->
+      <div class="form-group">
+        <label for="recipe_url" class="control-label">
+          Recipe url
+        </label>
+
+        <input type="text" id="recipe_url" name="recipe_url" placeholder="Recipe url" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for state_id -->
+      <input type="hidden" name="state_id" value="<%= @state.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Recipe
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
