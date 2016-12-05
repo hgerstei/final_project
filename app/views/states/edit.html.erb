@@ -1,0 +1,73 @@
+<!-- Validation failure messages -->
+<% if @state.errors.any? %>
+  <% @state.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit State #<%= @state.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_state/<%= @state.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for category_id -->
+      <div class="form-group">
+        <label for="category_id" class="control-label">
+          Category
+        </label>
+
+        <input type="text" id="category_id" name="category_id" placeholder="Category" class="form-control" value="<%= @state.category_id %>">
+      </div>
+
+      <!-- Label and input for stage1 -->
+      <div class="form-group">
+        <label for="stage1" class="control-label">
+          Stage1
+        </label>
+
+        <input type="text" id="stage1" name="stage1" placeholder="Stage1" class="form-control" value="<%= @state.stage1 %>">
+      </div>
+
+      <!-- Label and input for stage2 -->
+      <div class="form-group">
+        <label for="stage2" class="control-label">
+          Stage2
+        </label>
+
+        <input type="text" id="stage2" name="stage2" placeholder="Stage2" class="form-control" value="<%= @state.stage2 %>">
+      </div>
+
+      <!-- Label and input for stage3 -->
+      <div class="form-group">
+        <label for="stage3" class="control-label">
+          Stage3
+        </label>
+
+        <input type="text" id="stage3" name="stage3" placeholder="Stage3" class="form-control" value="<%= @state.stage3 %>">
+      </div>
+
+      <!-- Label and input for stage4 -->
+      <div class="form-group">
+        <label for="stage4" class="control-label">
+          Stage4
+        </label>
+
+        <input type="text" id="stage4" name="stage4" placeholder="Stage4" class="form-control" value="<%= @state.stage4 %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update State
+      </button>
+      or
+      <a href="/states/<%= @state.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

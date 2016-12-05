@@ -1,0 +1,36 @@
+<div class="page-header">
+  <h1>
+    States
+    <a href="/states/new" class="btn btn-lg btn-success">New State</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Category</th>
+        <th>Stage1</th>
+        <th>Stage2</th>
+        <th>Stage3</th>
+        <th>Stage4</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @states.each do |state| %>
+      <tr>
+        <td><%= state.category_id %></td>
+        <td><%= state.stage1 %></td>
+        <td><%= state.stage2 %></td>
+        <td><%= state.stage3 %></td>
+        <td><%= state.stage4 %></td>
+        <td>
+          <a href="/states/<%= state.id %>" class="btn btn-primary">Show</a>
+          <a href="/states/<%= state.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_state/<%= state.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
