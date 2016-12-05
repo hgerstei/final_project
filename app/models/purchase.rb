@@ -5,4 +5,6 @@ class Purchase < ApplicationRecord
 
   # Validations
 
+  validates :purchase_name, :presence => true
+
 end
