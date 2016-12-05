@@ -8,6 +8,10 @@ class Category < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :recipes,
+             :through => :states,
+             :source => :recipes
+
   has_many   :recommendations,
              :through => :states,
              :source => :recommendation
