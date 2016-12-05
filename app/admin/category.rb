@@ -1,5 +1,7 @@
 ActiveAdmin.register Category do
 
+ permit_params :category, :sub_categories, :photo_url, :lifespan, :refrigeration, :storage_suggestions
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
