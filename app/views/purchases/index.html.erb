@@ -20,7 +20,7 @@
       <% @purchases.each do |purchase| %>
       <tr>
         <td><%= purchase.purchase_name %></td>
-        <td><%= purchase.category_id %></td>
+        <td><%= purchase.category.category %></td>
         <td><%= purchase.purchase_date %></td>
         <td><%= purchase.notes %></td>
         <td><%= purchase.user_id %></td>
