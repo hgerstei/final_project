@@ -20,10 +20,22 @@
       <% @purchases.each do |purchase| %>
       <tr>
         <td><%= purchase.purchase_name %></td>
-        <td><%= purchase.category.category %></td>
+        <td>
+          <% if purchase.category.present? %>
+            <a href="/categories/<%= purchase.category.id %>">
+              <%= purchase.category.category %>
+            </a>
+          <% end %>
+        </td>
         <td><%= purchase.purchase_date %></td>
         <td><%= purchase.notes %></td>
-        <td><%= purchase.user.email %></td>
+        <td>
+          <% if purchase.user.present? %>
+            <a href="/users/<%= purchase.user.id %>">
+              <%= purchase.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/purchases/<%= purchase.id %>" class="btn btn-primary">Show</a>
           

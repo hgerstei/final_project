@@ -9,7 +9,13 @@
       <dd><%= @recommendation.recommendation %></dd>
 
       <dt>State</dt>
-      <dd><%= @recommendation.state_id %></dd>
+      <dd>
+        <% if @recommendation.state.present? %>
+          <a href="/states/<%= @recommendation.state_id %>">
+            <%= @recommendation.state.category_id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

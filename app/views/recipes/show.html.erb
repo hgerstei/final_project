@@ -12,7 +12,13 @@
       <dd><%= @recipe.recipe_url %></dd>
 
       <dt>State</dt>
-      <dd><%= @recipe.state_id %></dd>
+      <dd>
+        <% if @recipe.state.present? %>
+          <a href="/states/<%= @recipe.state_id %>">
+            <%= @recipe.state.category_id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

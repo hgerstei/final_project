@@ -19,7 +19,13 @@
       <tr>
         <td><%= recipe.recipe_name %></td>
         <td><%= recipe.recipe_url %></td>
-        <td><%= recipe.state.category_id %></td>
+        <td>
+          <% if recipe.state.present? %>
+            <a href="/states/<%= recipe.state.id %>">
+              <%= recipe.state.category_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/recipes/<%= recipe.id %>" class="btn btn-primary">Show</a>
           <a href="/recipes/<%= recipe.id %>/edit" class="btn btn-warning">Edit</a>

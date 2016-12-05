@@ -9,7 +9,13 @@
       <dd><%= @purchase.purchase_name %></dd>
 
       <dt>Category</dt>
-      <dd><%= @purchase.category_id %></dd>
+      <dd>
+        <% if @purchase.category.present? %>
+          <a href="/categories/<%= @purchase.category_id %>">
+            <%= @purchase.category.category %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Purchase date</dt>
       <dd><%= @purchase.purchase_date %></dd>
@@ -18,7 +24,13 @@
       <dd><%= @purchase.notes %></dd>
 
       <dt>User</dt>
-      <dd><%= @purchase.user_id %></dd>
+      <dd>
+        <% if @purchase.user.present? %>
+          <a href="/users/<%= @purchase.user_id %>">
+            <%= @purchase.user.email %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

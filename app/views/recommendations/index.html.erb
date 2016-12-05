@@ -17,7 +17,13 @@
       <% @recommendations.each do |recommendation| %>
       <tr>
         <td><%= recommendation.recommendation %></td>
-        <td><%= recommendation.state.category_id %></td>
+        <td>
+          <% if recommendation.state.present? %>
+            <a href="/states/<%= recommendation.state.id %>">
+              <%= recommendation.state.category_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/recommendations/<%= recommendation.id %>" class="btn btn-primary">Show</a>
           <a href="/recommendations/<%= recommendation.id %>/edit" class="btn btn-warning">Edit</a>
