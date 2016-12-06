@@ -23,6 +23,12 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# gem added to try to fix exec js error
+gem "coffee-script-source", "1.8.0"
+
+# gem added to fix sprockets issue
+gem 'jquery-ui-rails', '~> 4.2.1'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
